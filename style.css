@@ -1,10 +1,52 @@
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-image: linear-gradient(darkgreen, darkblue);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 nav {
   margin: auto;
-  width: 50%;
-  float: left;
-  padding: 50px;
-  text-align: center;
-  
+  background: darkgreen;
+  width: 100%;
+  float: top;
+  padding: 30px;
+  color: white;
+}
+
+.dropbtn {
+  /* display: none; */
+  text-decoration: none;
+  border: none;
+  background-color: darkgreen;
+  font-size: 30pt;
+  outline: none;
+  margin: 0;
+}
+
+.dropbtn:hover {
+  background-color: darkblue;
+  font-size: 35pt;
+}
+
+.dropdown-content {
+  display: none;
+  color: black;
+  position: absolute;
+  z-index: 1;
+  width: 10;
+  background-color: white;
+  font-size: 16pt;
+}
+
+.dropdown-content a {
+  padding: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 h1 {
