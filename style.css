@@ -13,7 +13,16 @@ nav {
   width: 10%;
   float: left;
   padding: 30px;
-  color: white;
+}
+
+.titlebar {
+  margin: auto;
+  background darkgreen;
+  width: 100%;
+  text-align: center;
+  font-size: 24pt;
+  padding: 20px;
+  color: black;
 }
 
 .dropbtn {
@@ -43,8 +52,13 @@ nav {
   border: 0;
 }
 
+.navbtn * {
+  text-align: center;
+}
+
 /* Thanks StackOverflow! */
 /* https://stackoverflow.com/questions/6868009/html-anchor-disable-style */
+/* Begin credited block */
 .navbtn a:link {
   text-decoration: inherit;
   color: inherit;
@@ -56,6 +70,7 @@ nav {
   color: inherit;
   cursor: auto;
 }
+/* End credited block */
 
 .navbtn:hover {
   background-color: darkblue;
@@ -84,7 +99,7 @@ nav {
 
 .textbox {
   width: 40%;
-  float: center;
+  float: right;
   background: ghostwhite;
   font-size: 20pt;
   padding: 10px;

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Surrey, North Dakota High School</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <!-- 
+    Same slideshow as index.html
+    See that file for proper credit
+  -->
+<div class="slideshow">
+  <div class="slide">
+    <img src="images/slideshow/mountains.png" width=100%>
+  </div>
+  <div class="slide">
+    <img src="images/slideshow/happy_students.png" width=100%>
+  </div>
+</div>
+
+<nav class="titlebar">
+  <h2>Surrey, North Dakota High School</h2>
+</nav>
+
+  <!-- 
+    Same navbar as index.html
+    See that file for proper credit
+  -->
+  <nav>
+    <button class="navbtn">
+      <a href="index.html">Home</a>
+    </button>
+    <button class="navbtn">
+      <a href="under_construction.html">Athletics</a>
+    </button>
+    <button class="navbtn">
+      <a href="under_construction.html">School Board</a>
+    </button>
+    <button class="navbtn">
+      <a href="under_construction.html">Student Portal</a>
+    </button>
+    <div class="dropdown">
+      <button class="dropbtn">
+        More
+      </button>
+        <div class="dropdown-content">
+          <a href="under_construction.html">Calendars</a><br>
+          <a href="under_construction.html">Policies</a><br>
+          <a href="under_construction.html">Jobs</a><br>
+          <a href="under_construction.html">Staff Listing</a><br>
+          <a href="https://www.surrey.k12.nd.us">Real Site</a>
+        </div>
+    </div>
+  </nav>
+
+  <!-- AI generated image: under_construction.png
+          Generated using https://www.craiyon.com
+          Prompt: under construction logo school large
+            Negative prompt: blue
+          AI upscaled from 256x256 to 1024x1024
+  -->
+  <img src="images/under_construction.png" width=60% style="float:right;">
+
+  <div class="textbox">This page is under construction!</div>
+
+<!-- For slideshow
+  Same javascript as index.html
+  See that file for proper credit
+-->
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  const slides = document.getElementsByClassName("slide");
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  slides[slideIndex-1].style.display = "block";  
+  setTimeout(showSlides, 2000);
+}
+</script>
+</body>
+</html>
