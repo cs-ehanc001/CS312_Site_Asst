@@ -6,14 +6,32 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<!-- AI generated image: banner.png
-      Generated using https://www.craiyon.com
-      Prompt: photorealistic mountains with forest in foreground
-        Negative prompt: water
-      AI upscaled from 256x256 to 1024x1024
-      Manually cropped using Gnu Image Manipulation Program
--->
-  <img src="images/banner.png" width=100%>
+  <!-- 
+    This page helped me make the slideshow
+    https://www.w3schools.com/howto/howto_js_slideshow.asp
+  -->
+<div class="slideshow">
+  <div class="slide">
+    <!-- AI generated image: mountains.png
+          Generated using https://www.craiyon.com
+          Prompt: photorealistic mountains with forest in foreground
+            Negative prompt: water
+          AI upscaled from 256x256 to 1024x1024
+          Manually cropped using Gnu Image Manipulation Program
+    -->
+    <img src="images/slideshow/mountains.png" width=100%>
+  </div>
+  <div class="slide">
+    <!-- AI generated image: happy_students.png
+          Generated using https://www.craiyon.com
+          Prompt: happy high school students
+          AI upscaled from 256x256 to 1024x1024
+          Manually cropped using Gnu Image Manipulation Program
+    -->
+    <img src="images/slideshow/happy_students.png" width=100%>
+  </div>
+</div>
+
   <!-- 
     This page helped me make the navbar + dropdown
     https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp
@@ -31,5 +49,23 @@
     </div>
   </nav>
   <h1>Hello</h1>
+
+<!-- For slideshow -->
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("slide");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  slides[slideIndex-1].style.display = "block";  
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
 </body>
 </html>
