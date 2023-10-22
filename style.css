@@ -37,12 +37,14 @@ nav {
   position: absolute;
   z-index: 1;
   width: 10;
-  background-color: white;
+  background-color: darkblue;
+  color: white;
   font-size: 16pt;
 }
 
 .dropdown-content a {
   padding: 10px;
+  color: inherit;
 }
 
 .dropdown:hover .dropdown-content {
