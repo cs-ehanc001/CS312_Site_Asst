@@ -97,8 +97,14 @@ nav {
   display: block;
 }
 
+.textbox-container {
+  padding-right: 20%;
+}
+
+/* Learned from: */
+/* https://code-boxx.com/box-around-text-html/ */
 .textbox {
-  width: 40%;
+  width: 50%;
   float: right;
   background: ghostwhite;
   font-size: 20pt;
@@ -109,4 +115,19 @@ nav {
 
 .textbox * {
   float: center;
+}
+
+.login-container {
+  display: none;
+  padding-left: 15%;
+
+  /* moves text box down :( */ 
+  /* padding-top: 21%; */
+}
+
+form {
+  float: left;
+  background-color: ghostwhite;
+  border: 5px solid lightgrey;
+  padding: 20px;
 }

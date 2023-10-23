@@ -51,6 +51,26 @@
   </div>
 </div>
 
+<!-- For slideshow
+      JavaScript from: (Automatic Slideshow)
+      https://www.w3schools.com/howto/howto_js_slideshow.asp
+-->
+<script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    const slides = document.getElementsByClassName("slide");
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 3000);
+  }
+</script>
+
 <nav class="titlebar">
   <h2>Surrey, North Dakota High School</h2>
 </nav>
@@ -69,7 +89,7 @@
     <button class="navbtn">
       <a href="under_construction.html">School Board</a>
     </button>
-    <button onclick="testfunc()" class="navbtn">
+    <button onclick="showLogin()" type="button" class="navbtn">
       Student Portal
     </button>
     <div class="dropdown">
@@ -86,51 +106,70 @@
     </div>
   </nav>
 
+  <div class="login-container" id="login-container" style="display:none;">
+    <form>
+      <button type="button"
+              onclick="hideLogin()">X</button>
+      <br>
+      <label for="username">Username:</label>
+      <input type="text" id="usernameField" value="">
+      <br>
+      <label for="password">Password:</label>
+      <input type="text" id="passwordField" value="">
+      <br>
+      <button id="loginbtn" type="button" onclick="handleLogin()">Submit</button>
+      <p id="denyAccess" style="color:red;">Access Denied!</p>
+    </form>
+  </div>
+  <!-- Login script -->
+  <script>
+    function hideLogin() {
+      document.getElementById("login-container").style.display = "none";
+      document.getElementById("denyAccess").style.display = "none";
+    }
+
+    function showLogin() {
+      document.getElementById("login-container").style.display = "block";
+      document.getElementById("denyAccess").style.display = "none";
+    }
+
+    function handleLogin() {
+      const username = document.getElementById("usernameField").value;
+      const password = document.getElementById("passwordField").value;
+
+      if (username == "admin" && password == "password") {
+        window.location = "student_portal.html";
+      } else {
+        document.getElementById("denyAccess").style.display = "block";
+      }
+    }
+  </script>
+
   <!-- Box around text!
         Learned from:
         https://code-boxx.com/box-around-text-html/
+        Including ".textbox" css!
 
         What I really want is for the textbox to be centered in the space between the navbar
         and the right edge, but I haven't figured that out yet.
   -->
-  <div class="textbox">
-    <!-- {{{ -->
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis convallis convallis tellus id interdum velit laoreet id. Dignissim convallis aenean et tortor at risus viverra adipiscing at. Cras sed felis eget velit aliquet sagittis id consectetur. Eget lorem dolor sed viverra ipsum. Ultricies mi quis hendrerit dolor magna. Volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque. Gravida arcu ac tortor dignissim convallis aenean et tortor at. Lectus magna fringilla urna porttitor. Quam quisque id diam vel quam elementum pulvinar etiam non. Nam at lectus urna duis convallis convallis. Adipiscing bibendum est ultricies integer quis auctor elit. Lectus mauris ultrices eros in cursus. Urna et pharetra pharetra massa massa ultricies mi. Sed tempus urna et pharetra. At quis risus sed vulputate odio ut enim blandit. <br> <br>
+  <div class="textbox-container">
+    <div class="textbox">
+      <!-- {{{ -->
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis convallis convallis tellus id interdum velit laoreet id. Dignissim convallis aenean et tortor at risus viverra adipiscing at. Cras sed felis eget velit aliquet sagittis id consectetur. Eget lorem dolor sed viverra ipsum. Ultricies mi quis hendrerit dolor magna. Volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque. Gravida arcu ac tortor dignissim convallis aenean et tortor at. Lectus magna fringilla urna porttitor. Quam quisque id diam vel quam elementum pulvinar etiam non. Nam at lectus urna duis convallis convallis. Adipiscing bibendum est ultricies integer quis auctor elit. Lectus mauris ultrices eros in cursus. Urna et pharetra pharetra massa massa ultricies mi. Sed tempus urna et pharetra. At quis risus sed vulputate odio ut enim blandit. <br> <br>
 
-    Mattis rhoncus urna neque viverra. In massa tempor nec feugiat nisl pretium. A iaculis at erat pellentesque adipiscing commodo elit at imperdiet. Vel risus commodo viverra maecenas accumsan lacus vel facilisis. Euismod nisi porta lorem mollis aliquam ut. Vitae proin sagittis nisl rhoncus mattis rhoncus urna. Turpis cursus in hac habitasse. Eu scelerisque felis imperdiet proin. Sem fringilla ut morbi tincidunt. Mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Volutpat ac tincidunt vitae semper quis lectus nulla. Velit egestas dui id ornare arcu. Tempus quam pellentesque nec nam. Metus vulputate eu scelerisque felis. Nulla pellentesque dignissim enim sit amet venenatis urna cursus eget. Amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien. Scelerisque purus semper eget duis at tellus at. Urna porttitor rhoncus dolor purus non. At augue eget arcu dictum varius duis at consectetur lorem. A diam maecenas sed enim ut sem viverra. <br> <br>
+      Mattis rhoncus urna neque viverra. In massa tempor nec feugiat nisl pretium. A iaculis at erat pellentesque adipiscing commodo elit at imperdiet. Vel risus commodo viverra maecenas accumsan lacus vel facilisis. Euismod nisi porta lorem mollis aliquam ut. Vitae proin sagittis nisl rhoncus mattis rhoncus urna. Turpis cursus in hac habitasse. Eu scelerisque felis imperdiet proin. Sem fringilla ut morbi tincidunt. Mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Volutpat ac tincidunt vitae semper quis lectus nulla. Velit egestas dui id ornare arcu. Tempus quam pellentesque nec nam. Metus vulputate eu scelerisque felis. Nulla pellentesque dignissim enim sit amet venenatis urna cursus eget. Amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien. Scelerisque purus semper eget duis at tellus at. Urna porttitor rhoncus dolor purus non. At augue eget arcu dictum varius duis at consectetur lorem. A diam maecenas sed enim ut sem viverra. <br> <br>
 
-    Tincidunt tortor aliquam nulla facilisi cras. Urna cursus eget nunc scelerisque viverra mauris in. Auctor urna nunc id cursus metus. Feugiat nibh sed pulvinar proin gravida hendrerit lectus. Adipiscing bibendum est ultricies integer quis. Nec nam aliquam sem et tortor consequat id porta. Enim diam vulputate ut pharetra sit amet aliquam id. Ipsum dolor sit amet consectetur adipiscing elit. Sit amet mauris commodo quis imperdiet massa tincidunt. Pellentesque pulvinar pellentesque habitant morbi tristique. Neque viverra justo nec ultrices dui sapien eget mi proin. Malesuada proin libero nunc consequat interdum varius sit amet. Diam in arcu cursus euismod quis viverra. <br> <br>
+      Tincidunt tortor aliquam nulla facilisi cras. Urna cursus eget nunc scelerisque viverra mauris in. Auctor urna nunc id cursus metus. Feugiat nibh sed pulvinar proin gravida hendrerit lectus. Adipiscing bibendum est ultricies integer quis. Nec nam aliquam sem et tortor consequat id porta. Enim diam vulputate ut pharetra sit amet aliquam id. Ipsum dolor sit amet consectetur adipiscing elit. Sit amet mauris commodo quis imperdiet massa tincidunt. Pellentesque pulvinar pellentesque habitant morbi tristique. Neque viverra justo nec ultrices dui sapien eget mi proin. Malesuada proin libero nunc consequat interdum varius sit amet. Diam in arcu cursus euismod quis viverra. <br> <br>
 
-    Sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Duis ut diam quam nulla. Est sit amet facilisis magna etiam tempor orci eu lobortis. Malesuada bibendum arcu vitae elementum curabitur vitae nunc. Dis parturient montes nascetur ridiculus mus mauris vitae. Eu sem integer vitae justo eget. Ac placerat vestibulum lectus mauris ultrices eros in. Dolor morbi non arcu risus quis varius quam quisque id. Lorem ipsum dolor sit amet consectetur adipiscing. Elementum pulvinar etiam non quam. Eget lorem dolor sed viverra ipsum nunc aliquet bibendum enim. Nibh cras pulvinar mattis nunc sed blandit libero volutpat. Maecenas sed enim ut sem viverra aliquet eget sit. Augue lacus viverra vitae congue eu consequat. Vivamus at augue eget arcu dictum varius duis at consectetur. A lacus vestibulum sed arcu non odio euismod lacinia at. <br> <br>
+      Sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Duis ut diam quam nulla. Est sit amet facilisis magna etiam tempor orci eu lobortis. Malesuada bibendum arcu vitae elementum curabitur vitae nunc. Dis parturient montes nascetur ridiculus mus mauris vitae. Eu sem integer vitae justo eget. Ac placerat vestibulum lectus mauris ultrices eros in. Dolor morbi non arcu risus quis varius quam quisque id. Lorem ipsum dolor sit amet consectetur adipiscing. Elementum pulvinar etiam non quam. Eget lorem dolor sed viverra ipsum nunc aliquet bibendum enim. Nibh cras pulvinar mattis nunc sed blandit libero volutpat. Maecenas sed enim ut sem viverra aliquet eget sit. Augue lacus viverra vitae congue eu consequat. Vivamus at augue eget arcu dictum varius duis at consectetur. A lacus vestibulum sed arcu non odio euismod lacinia at. <br> <br>
 
-    Amet consectetur adipiscing elit ut aliquam purus sit amet. Vel orci porta non pulvinar neque laoreet suspendisse. Odio ut enim blandit volutpat maecenas. Consectetur a erat nam at lectus urna duis. Eu turpis egestas pretium aenean. Enim facilisis gravida neque convallis a cras semper auctor neque. Quisque id diam vel quam elementum pulvinar etiam non. Dictum non consectetur a erat. Augue ut lectus arcu bibendum at varius vel. Duis ut diam quam nulla porttitor massa id neque. Sagittis eu volutpat odio facilisis mauris sit amet. Massa enim nec dui nunc mattis enim ut tellus. Quis varius quam quisque id diam. Massa massa ultricies mi quis hendrerit dolor magna eget. Quam lacus suspendisse faucibus interdum posuere lorem. <br> <br>
+      Amet consectetur adipiscing elit ut aliquam purus sit amet. Vel orci porta non pulvinar neque laoreet suspendisse. Odio ut enim blandit volutpat maecenas. Consectetur a erat nam at lectus urna duis. Eu turpis egestas pretium aenean. Enim facilisis gravida neque convallis a cras semper auctor neque. Quisque id diam vel quam elementum pulvinar etiam non. Dictum non consectetur a erat. Augue ut lectus arcu bibendum at varius vel. Duis ut diam quam nulla porttitor massa id neque. Sagittis eu volutpat odio facilisis mauris sit amet. Massa enim nec dui nunc mattis enim ut tellus. Quis varius quam quisque id diam. Massa massa ultricies mi quis hendrerit dolor magna eget. Quam lacus suspendisse faucibus interdum posuere lorem. <br> <br>
 
-    Habitant morbi tristique senectus et netus et malesuada. Massa sapien faucibus et molestie ac feugiat sed lectus vestibulum. Sapien pellentesque habitant morbi tristique senectus et. Condimentum vitae sapien pellentesque habitant. Ut consequat semper viverra nam. Augue eget arcu dictum varius duis at. Mauris cursus mattis molestie a iaculis at erat pellentesque adipiscing. Laoreet sit amet cursus sit amet dictum sit amet justo. Id faucibus nisl tincidunt eget nullam non nisi est. Ipsum dolor sit amet consectetur adipiscing. Ultrices eros in cursus turpis massa.
-    <!-- }}} -->
+      Habitant morbi tristique senectus et netus et malesuada. Massa sapien faucibus et molestie ac feugiat sed lectus vestibulum. Sapien pellentesque habitant morbi tristique senectus et. Condimentum vitae sapien pellentesque habitant. Ut consequat semper viverra nam. Augue eget arcu dictum varius duis at. Mauris cursus mattis molestie a iaculis at erat pellentesque adipiscing. Laoreet sit amet cursus sit amet dictum sit amet justo. Id faucibus nisl tincidunt eget nullam non nisi est. Ipsum dolor sit amet consectetur adipiscing. Ultrices eros in cursus turpis massa.
+      <!-- }}} -->
+    </div>
   </div>
 
-<!-- For slideshow
-      JavaScript from: (Automatic Slideshow)
-      https://www.w3schools.com/howto/howto_js_slideshow.asp
--->
-<script>
-let slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  const slides = document.getElementsByClassName("slide");
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  slides[slideIndex-1].style.display = "block";  
-  setTimeout(showSlides, 2000);
-}
-
-function testfunc() {
-  console.log("hello");
-}
-</script>
 </body>
 </html>
