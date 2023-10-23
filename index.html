@@ -30,6 +30,25 @@
     -->
     <img src="images/slideshow/happy_students.png" width=100%>
   </div>
+  <div class="slide">
+    <!-- ai generated image: library.png
+          generated using https://www.craiyon.com
+          prompt: photorealistic small school library
+            negative prompt: big fancy expensive
+          ai upscaled from 256x256 to 1024x1024
+          manually cropped using gnu image manipulation program
+    -->
+    <img src="images/slideshow/library.png" width=100%>
+  </div>
+  <div class="slide">
+    <!-- ai generated image: students_and_building.png
+          generated using https://www.craiyon.com
+          prompt: a group of students smiling in front of a high school building
+          ai upscaled from 256x256 to 1024x1024
+          manually cropped using gnu image manipulation program
+    -->
+    <img src="images/slideshow/students_and_building.png" width=100%>
+  </div>
 </div>
 
 <nav class="titlebar">
@@ -50,8 +69,8 @@
     <button class="navbtn">
       <a href="under_construction.html">School Board</a>
     </button>
-    <button class="navbtn">
-      <a href="under_construction.html">Student Portal</a>
+    <button onclick="testfunc()" class="navbtn">
+      Student Portal
     </button>
     <div class="dropdown">
       <button class="dropbtn">
@@ -107,6 +126,10 @@ function showSlides() {
   if (slideIndex > slides.length) {slideIndex = 1}    
   slides[slideIndex-1].style.display = "block";  
   setTimeout(showSlides, 2000);
+}
+
+function testfunc() {
+  console.log("hello");
 }
 </script>
 </body>
